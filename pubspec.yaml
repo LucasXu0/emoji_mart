@@ -1,0 +1,32 @@
+name: emoji_mart
+description: A new Flutter package project.
+version: 0.0.1
+homepage: https://appflowy.io
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  visibility_detector: ^0.4.0+2
+  flutter_sticky_header: ^0.6.5
+  sliver_tools: ^0.2.12
+  easy_debounce: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  freezed: ^2.4.5
+
+flutter:
+  assets:
+    - assets/emoji_data.json
+    - assets/translations/
