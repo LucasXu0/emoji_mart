@@ -16,6 +16,7 @@ class EmojiPickerConfiguration {
   const EmojiPickerConfiguration({
     this.perLine = 9,
     this.emojiSize = 24,
+    this.showTabs = true,
     this.showRecentTab = true,
     this.showSearchBar = true,
     this.showSectionHeader = true,
@@ -37,6 +38,9 @@ class EmojiPickerConfiguration {
 
   // whether to show the section header
   final bool showSectionHeader;
+
+  // whether to show the tabs
+  final bool showTabs;
 
   // the default skin tone
   final EmojiSkinTone defaultSkinTone;

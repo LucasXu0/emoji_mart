@@ -8,6 +8,8 @@ class EmojiPicker extends StatefulWidget {
     super.key,
     required this.emojiData,
     required this.onEmojiSelected,
+    this.searchBarBuilder,
+    this.headerBuilder,
     this.configuration = const EmojiPickerConfiguration(),
   });
 
@@ -18,6 +20,14 @@ class EmojiPicker extends StatefulWidget {
   final EmojiSelectedCallback onEmojiSelected;
 
   final EmojiPickerConfiguration configuration;
+
+  final Widget Function(
+    BuildContext context,
+    ValueNotifier<String> keyword,
+    ValueNotifier<EmojiSkinTone> skinTone,
+  )? searchBarBuilder;
+
+  final EmojiSectionHeaderBuilder? headerBuilder;
 
   @override
   State<EmojiPicker> createState() => _EmojiPickerState();
@@ -84,19 +94,20 @@ class _EmojiPickerState extends State<EmojiPicker>
       mainAxisSize: MainAxisSize.min,
       children: [
         // tab bar
-        _buildTabBar(context),
+        if (widget.configuration.showTabs) _buildTabBar(context),
 
         // search bar
         if (widget.configuration.showSearchBar)
-          EmojiSearchBar(
-            configuration: widget.configuration,
-            onKeywordChanged: (keyword) {
-              this.keyword.value = keyword;
-            },
-            onSkinToneChanged: (skinTone) {
-              this.skinTone.value = skinTone;
-            },
-          ),
+          widget.searchBarBuilder?.call(context, keyword, skinTone) ??
+              EmojiSearchBar(
+                configuration: widget.configuration,
+                onKeywordChanged: (keyword) {
+                  this.keyword.value = keyword;
+                },
+                onSkinToneChanged: (skinTone) {
+                  this.skinTone.value = skinTone;
+                },
+              ),
 
         // sections
         Expanded(
@@ -147,6 +158,7 @@ class _EmojiPickerState extends State<EmojiPicker>
                     configuration: widget.configuration,
                     emojiData: emojiData,
                     category: category,
+                    headerBuilder: widget.headerBuilder,
                     onEmojiSelected: widget.onEmojiSelected,
                   ),
                 ),
