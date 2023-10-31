@@ -80,12 +80,12 @@ class _EmojiPickerState extends State<EmojiPicker>
 
   @override
   void dispose() {
-    super.dispose();
-
     tabController.dispose();
     mostVisibleIndex.removeListener(scrollToMostVisibleSectionIndex);
     mostVisibleIndex.dispose();
     scrollController.dispose();
+
+    super.dispose();
   }
 
   @override
@@ -214,14 +214,13 @@ class _EmojiPickerState extends State<EmojiPicker>
       visibleSections.remove(categoryId);
     }
 
-    // If there are no visible sections, return
-    if (visibleSections.isEmpty) {
-      return;
-    }
-
     // Update the most visible index
     EasyDebounce.debounce(
         'updateMostVisibleIndex', const Duration(milliseconds: 250), () {
+      // If there are no visible sections, return
+      if (visibleSections.isEmpty) {
+        return;
+      }
       // Find the category with the highest visibility fraction
       final mostVisibleCategoryId = visibleSections.entries
           .reduce((a, b) => a.value > b.value ? a : b)
