@@ -7,6 +7,13 @@ typedef EmojiSectionHeaderBuilder = Widget Function(
   Category category,
 );
 
+typedef EmojiItemBuilder = Widget Function(
+  BuildContext context,
+  String emojiId,
+  String emoji,
+  EmojiSelectedCallback callback,
+);
+
 class EmojiSection extends StatelessWidget {
   const EmojiSection({
     super.key,
@@ -16,6 +23,7 @@ class EmojiSection extends StatelessWidget {
     required this.onEmojiSelected,
     required this.sectionKey,
     this.headerBuilder,
+    this.itemBuilder,
     this.skinTone = EmojiSkinTone.none,
   });
 
@@ -26,6 +34,7 @@ class EmojiSection extends StatelessWidget {
   final EmojiSkinTone skinTone;
   final EmojiSelectedCallback onEmojiSelected;
   final EmojiSectionHeaderBuilder? headerBuilder;
+  final EmojiItemBuilder? itemBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +50,20 @@ class EmojiSection extends StatelessWidget {
           emojiId,
           skinTone: skinTone,
         );
-        return EmojiItem(
-          size: configuration.emojiSize,
-          emoji: emoji,
-          onTap: () => onEmojiSelected(
-            emojiId,
-            emoji,
-          ),
-        );
+        return itemBuilder?.call(
+              context,
+              emojiId,
+              emoji,
+              onEmojiSelected,
+            ) ??
+            EmojiItem(
+              size: configuration.emojiSize,
+              emoji: emoji,
+              onTap: () => onEmojiSelected(
+                emojiId,
+                emoji,
+              ),
+            );
       },
     );
     if (configuration.showSectionHeader) {

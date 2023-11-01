@@ -3,6 +3,12 @@ import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+typedef EmojiSearchBarBuilder = Widget Function(
+  BuildContext context,
+  ValueNotifier<String> keyword,
+  ValueNotifier<EmojiSkinTone> skinTone,
+);
+
 class EmojiPicker extends StatefulWidget {
   const EmojiPicker({
     super.key,
@@ -10,24 +16,36 @@ class EmojiPicker extends StatefulWidget {
     required this.onEmojiSelected,
     this.searchBarBuilder,
     this.headerBuilder,
+    this.itemBuilder,
     this.configuration = const EmojiPickerConfiguration(),
   });
 
-  // Data to use for the picker
+  /// Data to use for the picker
+  ///
+  /// You can use the [EmojiData] class to load the data from a JSON file or from
+  ///   a custom source
   final EmojiData emojiData;
 
-  // callback when an emoji is selected
+  /// Callback when an emoji is selected
   final EmojiSelectedCallback onEmojiSelected;
 
+  /// Custom the emoji picker configuration
   final EmojiPickerConfiguration configuration;
 
-  final Widget Function(
-    BuildContext context,
-    ValueNotifier<String> keyword,
-    ValueNotifier<EmojiSkinTone> skinTone,
-  )? searchBarBuilder;
+  /// Builder for the emoji search bar
+  ///
+  /// If this is null, the default search bar will be used
+  final EmojiSearchBarBuilder? searchBarBuilder;
 
+  /// Builder for the emoji section header
+  ///
+  /// If this is null, the default section header will be used
   final EmojiSectionHeaderBuilder? headerBuilder;
+
+  /// Builder for the emoji item
+  ///
+  ///
+  final EmojiItemBuilder? itemBuilder;
 
   @override
   State<EmojiPicker> createState() => _EmojiPickerState();
@@ -159,6 +177,7 @@ class _EmojiPickerState extends State<EmojiPicker>
                     emojiData: emojiData,
                     category: category,
                     headerBuilder: widget.headerBuilder,
+                    itemBuilder: widget.itemBuilder,
                     onEmojiSelected: widget.onEmojiSelected,
                   ),
                 ),

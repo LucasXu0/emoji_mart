@@ -118,8 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: EmojiPicker(
                       emojiData: snapshot.data!,
                       configuration: const EmojiPickerConfiguration(
-                        emojiSize: 18,
+                        emojiSize: 20,
                         showSectionHeader: false,
+                        perLine: 8,
                       ),
                       onEmojiSelected: (emojiId, emoji) {
                         emojiNotifier.value = (emojiId, emoji);

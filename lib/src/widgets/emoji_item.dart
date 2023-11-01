@@ -23,6 +23,7 @@ class EmojiItem extends StatelessWidget {
       constraints: const BoxConstraints(),
       icon: Text(
         emoji,
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: size,
         ),
