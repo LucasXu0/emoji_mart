@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/services.dart';
@@ -107,5 +108,20 @@ class EmojiData with _$EmojiData {
     );
 
     return filteredEmojiData;
+  }
+
+  /// generate a random emoji
+  (String, String) get random {
+    final random = Random();
+    final randomCategory = categories[random.nextInt(
+      categories.length,
+    )];
+    final randomEmojiId = randomCategory.emojiIds[random.nextInt(
+      randomCategory.emojiIds.length,
+    )];
+    return (
+      randomEmojiId,
+      getEmojiById(randomEmojiId),
+    );
   }
 }
