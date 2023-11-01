@@ -121,6 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         emojiSize: 20,
                         showSectionHeader: false,
                         perLine: 8,
+                        defaultSkinTone: EmojiSkinTone.dark,
                       ),
                       onEmojiSelected: (emojiId, emoji) {
                         emojiNotifier.value = (emojiId, emoji);

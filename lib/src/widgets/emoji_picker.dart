@@ -90,6 +90,7 @@ class _EmojiPickerState extends State<EmojiPicker>
       vsync: this,
     );
     mostVisibleIndex.addListener(scrollToMostVisibleSectionIndex);
+    skinTone.value = widget.configuration.defaultSkinTone;
 
     for (final element in emojiData.categories) {
       sectionKeys[element.id] = GlobalKey();
