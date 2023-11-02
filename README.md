@@ -15,7 +15,11 @@ and the Flutter guide for
     <h1>Emoji Picker for Flutter</h1>
     <p>This package is inspired by <a href="https://github.com/missive/emoji-mart">emoji_mart</a></p>
     </p>
-    <img src="https://github.com/LucasXu0/emoji_mart/blob/main/resources/showcase.png">
+
+</div>
+
+<div align="center">
+    <img src="https://github.com/LucasXu0/emoji_mart/blob/main/resources/showcase.png?raw=true">
 </div>
 
 ## Features
