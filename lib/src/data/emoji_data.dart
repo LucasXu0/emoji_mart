@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'emoji_data.freezed.dart';

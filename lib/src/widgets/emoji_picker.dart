@@ -1,6 +1,6 @@
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 typedef EmojiSearchBarBuilder = Widget Function(

@@ -1,5 +1,5 @@
-import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
 typedef EmojiSectionHeaderBuilder = Widget Function(

@@ -1,5 +1,5 @@
-import 'package:emoji_mart/emoji_mart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 
 class EmojiSearchBar extends StatefulWidget {
   const EmojiSearchBar({
