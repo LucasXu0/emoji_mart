@@ -1,7 +1,7 @@
 name: flutter_emoji_mart
-description: A flutter package for emoji picker.
-version: 1.0.1
-homepage: https://appflowy.io
+description: A flutter package for emoji selection inspired by emoji-mart. Elevate your Flutter app's emoji-picking experience.
+version: 1.0.2
+homepage: https://github.com/LucasXu0/emoji_mart
 
 platforms:
   android:

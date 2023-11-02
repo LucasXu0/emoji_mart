@@ -9,6 +9,10 @@ linter:
     - unnecessary_raw_strings
     - use_decorated_box
 
+# analysis_options.yaml
 analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
   errors:
     invalid_annotation_target: ignore
