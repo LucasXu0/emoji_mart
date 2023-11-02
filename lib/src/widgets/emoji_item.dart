@@ -19,11 +19,11 @@ class EmojiItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onTap,
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.all(0.0),
       constraints: const BoxConstraints(),
+      alignment: Alignment.center,
       icon: Text(
         emoji,
-        textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: size,
         ),

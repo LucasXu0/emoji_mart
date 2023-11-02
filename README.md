@@ -11,29 +11,47 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<div align="center">
+    <h1>Emoji Picker for Flutter</h1>
+    <p>This package is inspired by <a href="https://github.com/missive/emoji-mart">emoji_mart</a></p>
+    </p>
+    <img src="https://github.com/LucasXu0/emoji_mart/blob/main/resources/showcase.png">
+</div>
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- customize your own emoji list
+- support emoji search
+- support emoji categories
+- support emoji skin tone
+
+## Install
 
 ## Getting started
+In the pubspec.yaml of your flutter project, add the following dependency:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yml
+dependencies:
+  emoji_mart: <latest_version>
+```
+
+In your library add the following import:
+
+```dart
+import 'package:emoji_mart/emoji_mart.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Example:
 
 ```dart
-const like = 'sample';
+EmojiPicker(
+  emojiData: [YOUR_EMOJI_DATA],
+  onEmojiSelected: (emojiId, emoji) {
+    // ...
+  },
+)
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For further information, please refer to the [example](https://github.com/LucasXu0/emoji_mart/blob/main/example/lib/main.dart).

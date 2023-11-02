@@ -1,6 +1,6 @@
 name: emoji_mart
-description: A new Flutter package project.
-version: 0.0.1
+description: A flutter package for emoji picker.
+version: 1.0.0
 homepage: https://appflowy.io
 
 environment:
@@ -29,4 +29,4 @@ dev_dependencies:
 flutter:
   assets:
     - assets/emoji_data.json
-    - assets/translations/
+
