@@ -6,6 +6,7 @@ class EmojiItem extends StatelessWidget {
     required this.onTap,
     required this.emoji,
     this.size = 24,
+    this.fontFamilyFallback,
   });
 
   final VoidCallback onTap;
@@ -14,6 +15,9 @@ class EmojiItem extends StatelessWidget {
 
   // size of the emoji, font size
   final double size;
+
+  // In some platforms, emoji is not supported, so we need to use fallback font
+  final List<String>? fontFamilyFallback;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +30,7 @@ class EmojiItem extends StatelessWidget {
         emoji,
         style: TextStyle(
           fontSize: size,
+          fontFamilyFallback: fontFamilyFallback ?? ['Noto Color Emoji'],
         ),
       ),
     );

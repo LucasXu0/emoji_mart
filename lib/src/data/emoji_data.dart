@@ -56,7 +56,7 @@ class EmojiData with _$EmojiData {
 
   static Future<EmojiData> builtIn() async {
     final json = await rootBundle
-        .loadString('packages/emoji_mart/assets/emoji_data.json');
+        .loadString('packages/flutter_emoji_mart/assets/emoji_data.json');
     return EmojiData.fromJson(
       Map<String, dynamic>.from(jsonDecode(json)),
     );
