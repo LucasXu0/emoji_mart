@@ -2137,13 +2137,6 @@
       "skins": [{ "unified": "1f617", "native": "😗" }],
       "version": 1
     },
-    "relaxed": {
-      "id": "relaxed",
-      "name": "Smiling Face",
-      "keywords": ["relaxed", "blush", "massage", "happiness"],
-      "skins": [{ "unified": "263a-fe0f", "native": "☺️" }],
-      "version": 1
-    },
     "kissing_closed_eyes": {
       "id": "kissing_closed_eyes",
       "name": "Kissing Face with Closed Eyes",
@@ -2630,13 +2623,6 @@
       "name": "Slightly Frowning Face",
       "keywords": ["disappointed", "sad", "upset"],
       "skins": [{ "unified": "1f641", "native": "🙁" }],
-      "version": 1
-    },
-    "white_frowning_face": {
-      "id": "white_frowning_face",
-      "name": "Frowning Face",
-      "keywords": ["white", "sad", "upset", "frown"],
-      "skins": [{ "unified": "2639-fe0f", "native": "☹️" }],
       "version": 1
     },
     "open_mouth": {
