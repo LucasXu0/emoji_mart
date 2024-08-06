@@ -18,6 +18,7 @@ class EmojiPicker extends StatefulWidget {
     this.headerBuilder,
     this.itemBuilder,
     this.configuration = const EmojiPickerConfiguration(),
+    this.padding = const EdgeInsets.all(0),
   });
 
   /// Data to use for the picker
@@ -46,6 +47,9 @@ class EmojiPicker extends StatefulWidget {
   ///
   ///
   final EmojiItemBuilder? itemBuilder;
+
+  /// Padding for the emoji picker
+  final EdgeInsets padding;
 
   @override
   State<EmojiPicker> createState() => _EmojiPickerState();
@@ -141,7 +145,6 @@ class _EmojiPickerState extends State<EmojiPicker>
         .map(
           (category) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
-            // child: Text(category.id),
             child: Icon(
               categoryIcon(category.id),
               size: 20,
@@ -165,21 +168,24 @@ class _EmojiPickerState extends State<EmojiPicker>
           controller: scrollController,
           slivers: emojiData.categories
               .map(
-                (category) => SliverVisibilityDetector(
-                  key: ValueKey(category.id),
-                  onVisibilityChanged: (info) => updateMostVisibleSection(
-                    category.id,
-                    info,
-                  ),
-                  sliver: EmojiSection(
-                    sectionKey: sectionKeys[category.id]!,
-                    skinTone: skinTone,
-                    configuration: widget.configuration,
-                    emojiData: emojiData,
-                    category: category,
-                    headerBuilder: widget.headerBuilder,
-                    itemBuilder: widget.itemBuilder,
-                    onEmojiSelected: widget.onEmojiSelected,
+                (category) => SliverPadding(
+                  padding: widget.padding,
+                  sliver: SliverVisibilityDetector(
+                    key: ValueKey(category.id),
+                    onVisibilityChanged: (info) => updateMostVisibleSection(
+                      category.id,
+                      info,
+                    ),
+                    sliver: EmojiSection(
+                      sectionKey: sectionKeys[category.id]!,
+                      skinTone: skinTone,
+                      configuration: widget.configuration,
+                      emojiData: emojiData,
+                      category: category,
+                      headerBuilder: widget.headerBuilder,
+                      itemBuilder: widget.itemBuilder,
+                      onEmojiSelected: widget.onEmojiSelected,
+                    ),
                   ),
                 ),
               )

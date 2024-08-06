@@ -30,7 +30,7 @@ class EmojiItem extends StatelessWidget {
         emoji,
         style: TextStyle(
           fontSize: size,
-          fontFamilyFallback: fontFamilyFallback ?? ['Noto Color Emoji'],
+          fontFamilyFallback: fontFamilyFallback,
         ),
       ),
     );

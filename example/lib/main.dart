@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -109,6 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               emoji: emoji,
                               size: 28,
+                              fontFamilyFallback:
+                                  defaultTargetPlatform == TargetPlatform.macOS
+                                      ? null
+                                      : ['Noto Color Emoji'],
                             ),
                           );
                         },

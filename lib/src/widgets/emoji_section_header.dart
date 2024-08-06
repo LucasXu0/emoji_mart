@@ -17,7 +17,7 @@ class EmojiSectionHeader extends StatelessWidget {
       height: 28,
       padding: const EdgeInsets.symmetric(horizontal: 8),
       width: double.infinity,
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       child: Text(
         categoryI18n,
         style: Theme.of(context).textTheme.titleMedium,
