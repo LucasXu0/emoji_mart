@@ -87,7 +87,10 @@ class EmojiData with _$EmojiData {
       final filteredEmojiIds = <String>[];
       for (final emojiId in category.emojiIds) {
         final emoji = emojis[emojiId]!;
-        if (emoji.keywords.any((k) => k.contains(keyword.toLowerCase()))) {
+        final lowercaseKey = keyword.toLowerCase();
+        if (emoji.keywords.any((k) => k.contains(lowercaseKey)) ||
+            emoji.id.contains(lowercaseKey) ||
+            emoji.name.contains(lowercaseKey)) {
           filteredEmojiIds.add(emojiId);
           filteredEmojis[emojiId] = emoji;
         }
