@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_emoji_mart/flutter_emoji_mart.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-typedef EmojiSearchBarBuilder = Widget Function(
-  BuildContext context,
-  ValueNotifier<String> keyword,
-  ValueNotifier<EmojiSkinTone> skinTone,
-);
+typedef EmojiSearchBarBuilder =
+    Widget Function(
+      BuildContext context,
+      ValueNotifier<String> keyword,
+      ValueNotifier<EmojiSkinTone> skinTone,
+    );
 
 class EmojiPicker extends StatefulWidget {
   const EmojiPicker({
@@ -75,8 +76,9 @@ class _EmojiPickerState extends State<EmojiPicker>
   final ValueNotifier<String> keyword = ValueNotifier('');
 
   // current selected skin tone
-  final ValueNotifier<EmojiSkinTone> skinTone =
-      ValueNotifier(EmojiSkinTone.none);
+  final ValueNotifier<EmojiSkinTone> skinTone = ValueNotifier(
+    EmojiSkinTone.none,
+  );
 
   late TabController tabController;
   final scrollController = ScrollController();
@@ -133,9 +135,7 @@ class _EmojiPickerState extends State<EmojiPicker>
               ),
 
         // sections
-        Expanded(
-          child: _buildSections(context),
-        ),
+        Expanded(child: _buildSections(context)),
       ],
     );
   }
@@ -145,10 +145,7 @@ class _EmojiPickerState extends State<EmojiPicker>
         .map(
           (category) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 4.0),
-            child: Icon(
-              categoryIcon(category.id),
-              size: 20,
-            ),
+            child: Icon(categoryIcon(category.id), size: 20),
           ),
         )
         .toList();
@@ -172,10 +169,8 @@ class _EmojiPickerState extends State<EmojiPicker>
                   padding: widget.padding,
                   sliver: SliverVisibilityDetector(
                     key: ValueKey(category.id),
-                    onVisibilityChanged: (info) => updateMostVisibleSection(
-                      category.id,
-                      info,
-                    ),
+                    onVisibilityChanged: (info) =>
+                        updateMostVisibleSection(category.id, info),
                     sliver: EmojiSection(
                       sectionKey: sectionKeys[category.id]!,
                       skinTone: skinTone,
@@ -195,10 +190,10 @@ class _EmojiPickerState extends State<EmojiPicker>
     if (widget.configuration.showSearchBar) {
       return ValueListenableBuilder<EmojiSkinTone>(
         valueListenable: skinTone,
-        builder: (_, skinTone, __) {
+        builder: (context, skinTone, child) {
           return ValueListenableBuilder(
             valueListenable: keyword,
-            builder: (_, keyword, ___) {
+            builder: (context, keyword, child) {
               final emojiData = widget.emojiData.filterByKeyword(keyword);
               if (emojiData.categories.isEmpty) {
                 return Center(
@@ -225,9 +220,7 @@ class _EmojiPickerState extends State<EmojiPicker>
     final key = sectionKeys[categoryId];
     final currentContext = key?.currentContext;
     if (currentContext != null) {
-      await Scrollable.ensureVisible(
-        currentContext,
-      );
+      await Scrollable.ensureVisible(currentContext);
     }
   }
 
@@ -242,19 +235,22 @@ class _EmojiPickerState extends State<EmojiPicker>
 
     // Update the most visible index
     EasyDebounce.debounce(
-        'updateMostVisibleIndex', const Duration(milliseconds: 250), () {
-      // If there are no visible sections, return
-      if (visibleSections.isEmpty) {
-        return;
-      }
-      // Find the category with the highest visibility fraction
-      final mostVisibleCategoryId = visibleSections.entries
-          .reduce((a, b) => a.value > b.value ? a : b)
-          .key;
-      mostVisibleIndex.value = widget.emojiData.categories.indexWhere(
-        (category) => category.id == mostVisibleCategoryId,
-      );
-    });
+      'updateMostVisibleIndex',
+      const Duration(milliseconds: 250),
+      () {
+        // If there are no visible sections, return
+        if (visibleSections.isEmpty) {
+          return;
+        }
+        // Find the category with the highest visibility fraction
+        final mostVisibleCategoryId = visibleSections.entries
+            .reduce((a, b) => a.value > b.value ? a : b)
+            .key;
+        mostVisibleIndex.value = widget.emojiData.categories.indexWhere(
+          (category) => category.id == mostVisibleCategoryId,
+        );
+      },
+    );
   }
 
   IconData categoryIcon(String categoryId) {

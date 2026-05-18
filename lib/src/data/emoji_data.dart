@@ -9,7 +9,7 @@ part 'emoji_data.freezed.dart';
 part 'emoji_data.g.dart';
 
 @freezed
-class Category with _$Category {
+abstract class Category with _$Category {
   const factory Category({
     required String id,
     @JsonKey(name: 'emojis') required List<String> emojiIds,
@@ -20,17 +20,14 @@ class Category with _$Category {
 }
 
 @freezed
-class Skin with _$Skin {
-  const factory Skin({
-    required String unified,
-    required String native,
-  }) = _Skin;
+abstract class Skin with _$Skin {
+  const factory Skin({required String unified, required String native}) = _Skin;
 
   factory Skin.fromJson(Map<String, dynamic> json) => _$SkinFromJson(json);
 }
 
 @freezed
-class Emoji with _$Emoji {
+abstract class Emoji with _$Emoji {
   const factory Emoji({
     required String id,
     required String name,
@@ -43,7 +40,7 @@ class Emoji with _$Emoji {
 }
 
 @freezed
-class EmojiData with _$EmojiData {
+abstract class EmojiData with _$EmojiData {
   const EmojiData._(); // Added constructor
 
   const factory EmojiData({
@@ -55,11 +52,10 @@ class EmojiData with _$EmojiData {
       _$EmojiDataFromJson(json);
 
   static Future<EmojiData> builtIn() async {
-    final json = await rootBundle
-        .loadString('packages/flutter_emoji_mart/assets/emoji_data.json');
-    return EmojiData.fromJson(
-      Map<String, dynamic>.from(jsonDecode(json)),
+    final json = await rootBundle.loadString(
+      'packages/flutter_emoji_mart/assets/emoji_data.json',
     );
+    return EmojiData.fromJson(Map<String, dynamic>.from(jsonDecode(json)));
   }
 
   String getEmojiById(
@@ -97,11 +93,7 @@ class EmojiData with _$EmojiData {
       }
 
       if (filteredEmojiIds.isNotEmpty || keepEmptyCategories) {
-        filteredCategories.add(
-          category.copyWith(
-            emojiIds: filteredEmojiIds,
-          ),
-        );
+        filteredCategories.add(category.copyWith(emojiIds: filteredEmojiIds));
       }
     }
 
@@ -116,15 +108,9 @@ class EmojiData with _$EmojiData {
   /// generate a random emoji
   (String, String) get random {
     final random = Random();
-    final randomCategory = categories[random.nextInt(
-      categories.length,
-    )];
-    final randomEmojiId = randomCategory.emojiIds[random.nextInt(
-      randomCategory.emojiIds.length,
-    )];
-    return (
-      randomEmojiId,
-      getEmojiById(randomEmojiId),
-    );
+    final randomCategory = categories[random.nextInt(categories.length)];
+    final randomEmojiId =
+        randomCategory.emojiIds[random.nextInt(randomCategory.emojiIds.length)];
+    return (randomEmojiId, getEmojiById(randomEmojiId));
   }
 }

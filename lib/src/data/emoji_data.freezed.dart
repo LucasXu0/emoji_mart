@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,112 +9,251 @@ part of 'emoji_data.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Category {
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @JsonKey(name: 'emojis')
-  List<String> get emojiIds => throw _privateConstructorUsedError;
+  List<String> get emojiIds;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
-  @useResult
-  $Res call({String id, @JsonKey(name: 'emojis') List<String> emojiIds});
-}
-
-/// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $CategoryCopyWith<Category> get copyWith =>
+      _$CategoryCopyWithImpl<Category>(this as Category, _$identity);
+
+  /// Serializes this Category to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? emojiIds = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      emojiIds: null == emojiIds
-          ? _value.emojiIds
-          : emojiIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Category &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other.emojiIds, emojiIds));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, const DeepCollectionEquality().hash(emojiIds));
+
+  @override
+  String toString() {
+    return 'Category(id: $id, emojiIds: $emojiIds)';
   }
 }
 
 /// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res>
-    implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(
-          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
-      __$$CategoryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CategoryCopyWith<$Res> {
+  factory $CategoryCopyWith(Category value, $Res Function(Category) _then) =
+      _$CategoryCopyWithImpl;
   @useResult
   $Res call({String id, @JsonKey(name: 'emojis') List<String> emojiIds});
 }
 
 /// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
-    implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(
-      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
-      : super(_value, _then);
+class _$CategoryCopyWithImpl<$Res> implements $CategoryCopyWith<$Res> {
+  _$CategoryCopyWithImpl(this._self, this._then);
 
+  final Category _self;
+  final $Res Function(Category) _then;
+
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? emojiIds = null,
   }) {
-    return _then(_$CategoryImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       emojiIds: null == emojiIds
-          ? _value._emojiIds
+          ? _self.emojiIds
           : emojiIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Category].
+extension CategoryPatterns on Category {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Category value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Category() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Category value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Category():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Category value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Category() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, @JsonKey(name: 'emojis') List<String> emojiIds)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Category() when $default != null:
+        return $default(_that.id, _that.emojiIds);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, @JsonKey(name: 'emojis') List<String> emojiIds)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Category():
+        return $default(_that.id, _that.emojiIds);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id, @JsonKey(name: 'emojis') List<String> emojiIds)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Category() when $default != null:
+        return $default(_that.id, _that.emojiIds);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$CategoryImpl implements _Category {
-  const _$CategoryImpl(
+class _Category implements Category {
+  const _Category(
       {required this.id,
       @JsonKey(name: 'emojis') required final List<String> emojiIds})
       : _emojiIds = emojiIds;
-
-  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CategoryImplFromJson(json);
+  factory _Category.fromJson(Map<String, dynamic> json) =>
+      _$CategoryFromJson(json);
 
   @override
   final String id;
@@ -127,288 +266,438 @@ class _$CategoryImpl implements _Category {
     return EqualUnmodifiableListView(_emojiIds);
   }
 
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Category(id: $id, emojiIds: $emojiIds)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CategoryCopyWith<_Category> get copyWith =>
+      __$CategoryCopyWithImpl<_Category>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CategoryToJson(
+      this,
+    );
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CategoryImpl &&
+            other is _Category &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other._emojiIds, _emojiIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, const DeepCollectionEquality().hash(_emojiIds));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CategoryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Category(id: $id, emojiIds: $emojiIds)';
   }
 }
 
-abstract class _Category implements Category {
-  const factory _Category(
-          {required final String id,
-          @JsonKey(name: 'emojis') required final List<String> emojiIds}) =
-      _$CategoryImpl;
-
-  factory _Category.fromJson(Map<String, dynamic> json) =
-      _$CategoryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$CategoryCopyWith<$Res>
+    implements $CategoryCopyWith<$Res> {
+  factory _$CategoryCopyWith(_Category value, $Res Function(_Category) _then) =
+      __$CategoryCopyWithImpl;
   @override
-  String get id;
-  @override
-  @JsonKey(name: 'emojis')
-  List<String> get emojiIds;
-  @override
-  @JsonKey(ignore: true)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String id, @JsonKey(name: 'emojis') List<String> emojiIds});
 }
 
-Skin _$SkinFromJson(Map<String, dynamic> json) {
-  return _Skin.fromJson(json);
+/// @nodoc
+class __$CategoryCopyWithImpl<$Res> implements _$CategoryCopyWith<$Res> {
+  __$CategoryCopyWithImpl(this._self, this._then);
+
+  final _Category _self;
+  final $Res Function(_Category) _then;
+
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? emojiIds = null,
+  }) {
+    return _then(_Category(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      emojiIds: null == emojiIds
+          ? _self._emojiIds
+          : emojiIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$Skin {
-  String get unified => throw _privateConstructorUsedError;
-  String get native => throw _privateConstructorUsedError;
+  String get unified;
+  String get native;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SkinCopyWith<Skin> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SkinCopyWith<$Res> {
-  factory $SkinCopyWith(Skin value, $Res Function(Skin) then) =
-      _$SkinCopyWithImpl<$Res, Skin>;
-  @useResult
-  $Res call({String unified, String native});
-}
-
-/// @nodoc
-class _$SkinCopyWithImpl<$Res, $Val extends Skin>
-    implements $SkinCopyWith<$Res> {
-  _$SkinCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Skin
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $SkinCopyWith<Skin> get copyWith =>
+      _$SkinCopyWithImpl<Skin>(this as Skin, _$identity);
+
+  /// Serializes this Skin to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? unified = null,
-    Object? native = null,
-  }) {
-    return _then(_value.copyWith(
-      unified: null == unified
-          ? _value.unified
-          : unified // ignore: cast_nullable_to_non_nullable
-              as String,
-      native: null == native
-          ? _value.native
-          : native // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Skin &&
+            (identical(other.unified, unified) || other.unified == unified) &&
+            (identical(other.native, native) || other.native == native));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, unified, native);
+
+  @override
+  String toString() {
+    return 'Skin(unified: $unified, native: $native)';
   }
 }
 
 /// @nodoc
-abstract class _$$SkinImplCopyWith<$Res> implements $SkinCopyWith<$Res> {
-  factory _$$SkinImplCopyWith(
-          _$SkinImpl value, $Res Function(_$SkinImpl) then) =
-      __$$SkinImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SkinCopyWith<$Res> {
+  factory $SkinCopyWith(Skin value, $Res Function(Skin) _then) =
+      _$SkinCopyWithImpl;
   @useResult
   $Res call({String unified, String native});
 }
 
 /// @nodoc
-class __$$SkinImplCopyWithImpl<$Res>
-    extends _$SkinCopyWithImpl<$Res, _$SkinImpl>
-    implements _$$SkinImplCopyWith<$Res> {
-  __$$SkinImplCopyWithImpl(_$SkinImpl _value, $Res Function(_$SkinImpl) _then)
-      : super(_value, _then);
+class _$SkinCopyWithImpl<$Res> implements $SkinCopyWith<$Res> {
+  _$SkinCopyWithImpl(this._self, this._then);
 
+  final Skin _self;
+  final $Res Function(Skin) _then;
+
+  /// Create a copy of Skin
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? unified = null,
     Object? native = null,
   }) {
-    return _then(_$SkinImpl(
+    return _then(_self.copyWith(
       unified: null == unified
-          ? _value.unified
+          ? _self.unified
           : unified // ignore: cast_nullable_to_non_nullable
               as String,
       native: null == native
-          ? _value.native
+          ? _self.native
           : native // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Skin].
+extension SkinPatterns on Skin {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Skin value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Skin() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Skin value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Skin():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Skin value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Skin() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String unified, String native)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Skin() when $default != null:
+        return $default(_that.unified, _that.native);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String unified, String native) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Skin():
+        return $default(_that.unified, _that.native);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String unified, String native)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Skin() when $default != null:
+        return $default(_that.unified, _that.native);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$SkinImpl implements _Skin {
-  const _$SkinImpl({required this.unified, required this.native});
-
-  factory _$SkinImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SkinImplFromJson(json);
+class _Skin implements Skin {
+  const _Skin({required this.unified, required this.native});
+  factory _Skin.fromJson(Map<String, dynamic> json) => _$SkinFromJson(json);
 
   @override
   final String unified;
   @override
   final String native;
 
+  /// Create a copy of Skin
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Skin(unified: $unified, native: $native)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SkinCopyWith<_Skin> get copyWith =>
+      __$SkinCopyWithImpl<_Skin>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SkinToJson(
+      this,
+    );
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SkinImpl &&
+            other is _Skin &&
             (identical(other.unified, unified) || other.unified == unified) &&
             (identical(other.native, native) || other.native == native));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, unified, native);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SkinImplCopyWith<_$SkinImpl> get copyWith =>
-      __$$SkinImplCopyWithImpl<_$SkinImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SkinImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Skin(unified: $unified, native: $native)';
   }
 }
 
-abstract class _Skin implements Skin {
-  const factory _Skin(
-      {required final String unified,
-      required final String native}) = _$SkinImpl;
-
-  factory _Skin.fromJson(Map<String, dynamic> json) = _$SkinImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$SkinCopyWith<$Res> implements $SkinCopyWith<$Res> {
+  factory _$SkinCopyWith(_Skin value, $Res Function(_Skin) _then) =
+      __$SkinCopyWithImpl;
   @override
-  String get unified;
-  @override
-  String get native;
-  @override
-  @JsonKey(ignore: true)
-  _$$SkinImplCopyWith<_$SkinImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String unified, String native});
 }
 
-Emoji _$EmojiFromJson(Map<String, dynamic> json) {
-  return _Emoji.fromJson(json);
+/// @nodoc
+class __$SkinCopyWithImpl<$Res> implements _$SkinCopyWith<$Res> {
+  __$SkinCopyWithImpl(this._self, this._then);
+
+  final _Skin _self;
+  final $Res Function(_Skin) _then;
+
+  /// Create a copy of Skin
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? unified = null,
+    Object? native = null,
+  }) {
+    return _then(_Skin(
+      unified: null == unified
+          ? _self.unified
+          : unified // ignore: cast_nullable_to_non_nullable
+              as String,
+      native: null == native
+          ? _self.native
+          : native // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$Emoji {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  Set<String> get keywords => throw _privateConstructorUsedError;
-  List<Skin> get skins => throw _privateConstructorUsedError;
-  double get version => throw _privateConstructorUsedError;
+  String get id;
+  String get name;
+  Set<String> get keywords;
+  List<Skin> get skins;
+  double get version;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EmojiCopyWith<Emoji> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EmojiCopyWith<$Res> {
-  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) then) =
-      _$EmojiCopyWithImpl<$Res, Emoji>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      Set<String> keywords,
-      List<Skin> skins,
-      double version});
-}
-
-/// @nodoc
-class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
-    implements $EmojiCopyWith<$Res> {
-  _$EmojiCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Emoji
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $EmojiCopyWith<Emoji> get copyWith =>
+      _$EmojiCopyWithImpl<Emoji>(this as Emoji, _$identity);
+
+  /// Serializes this Emoji to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? keywords = null,
-    Object? skins = null,
-    Object? version = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      keywords: null == keywords
-          ? _value.keywords
-          : keywords // ignore: cast_nullable_to_non_nullable
-              as Set<String>,
-      skins: null == skins
-          ? _value.skins
-          : skins // ignore: cast_nullable_to_non_nullable
-              as List<Skin>,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Emoji &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.keywords, keywords) &&
+            const DeepCollectionEquality().equals(other.skins, skins) &&
+            (identical(other.version, version) || other.version == version));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(keywords),
+      const DeepCollectionEquality().hash(skins),
+      version);
+
+  @override
+  String toString() {
+    return 'Emoji(id: $id, name: $name, keywords: $keywords, skins: $skins, version: $version)';
   }
 }
 
 /// @nodoc
-abstract class _$$EmojiImplCopyWith<$Res> implements $EmojiCopyWith<$Res> {
-  factory _$$EmojiImplCopyWith(
-          _$EmojiImpl value, $Res Function(_$EmojiImpl) then) =
-      __$$EmojiImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $EmojiCopyWith<$Res> {
+  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) _then) =
+      _$EmojiCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -419,13 +708,14 @@ abstract class _$$EmojiImplCopyWith<$Res> implements $EmojiCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$EmojiImplCopyWithImpl<$Res>
-    extends _$EmojiCopyWithImpl<$Res, _$EmojiImpl>
-    implements _$$EmojiImplCopyWith<$Res> {
-  __$$EmojiImplCopyWithImpl(
-      _$EmojiImpl _value, $Res Function(_$EmojiImpl) _then)
-      : super(_value, _then);
+class _$EmojiCopyWithImpl<$Res> implements $EmojiCopyWith<$Res> {
+  _$EmojiCopyWithImpl(this._self, this._then);
 
+  final Emoji _self;
+  final $Res Function(Emoji) _then;
+
+  /// Create a copy of Emoji
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -435,35 +725,201 @@ class __$$EmojiImplCopyWithImpl<$Res>
     Object? skins = null,
     Object? version = null,
   }) {
-    return _then(_$EmojiImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       keywords: null == keywords
-          ? _value._keywords
+          ? _self.keywords
           : keywords // ignore: cast_nullable_to_non_nullable
               as Set<String>,
       skins: null == skins
-          ? _value._skins
+          ? _self.skins
           : skins // ignore: cast_nullable_to_non_nullable
               as List<Skin>,
       version: null == version
-          ? _value.version
+          ? _self.version
           : version // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Emoji].
+extension EmojiPatterns on Emoji {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Emoji value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Emoji value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Emoji value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String name, Set<String> keywords,
+            List<Skin> skins, double version)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji() when $default != null:
+        return $default(
+            _that.id, _that.name, _that.keywords, _that.skins, _that.version);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String name, Set<String> keywords,
+            List<Skin> skins, double version)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji():
+        return $default(
+            _that.id, _that.name, _that.keywords, _that.skins, _that.version);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String name, Set<String> keywords,
+            List<Skin> skins, double version)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Emoji() when $default != null:
+        return $default(
+            _that.id, _that.name, _that.keywords, _that.skins, _that.version);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$EmojiImpl implements _Emoji {
-  const _$EmojiImpl(
+class _Emoji implements Emoji {
+  const _Emoji(
       {required this.id,
       required this.name,
       required final Set<String> keywords,
@@ -471,9 +927,7 @@ class _$EmojiImpl implements _Emoji {
       required this.version})
       : _keywords = keywords,
         _skins = skins;
-
-  factory _$EmojiImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmojiImplFromJson(json);
+  factory _Emoji.fromJson(Map<String, dynamic> json) => _$EmojiFromJson(json);
 
   @override
   final String id;
@@ -498,16 +952,26 @@ class _$EmojiImpl implements _Emoji {
   @override
   final double version;
 
+  /// Create a copy of Emoji
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Emoji(id: $id, name: $name, keywords: $keywords, skins: $skins, version: $version)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EmojiCopyWith<_Emoji> get copyWith =>
+      __$EmojiCopyWithImpl<_Emoji>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EmojiToJson(
+      this,
+    );
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmojiImpl &&
+            other is _Emoji &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._keywords, _keywords) &&
@@ -515,7 +979,7 @@ class _$EmojiImpl implements _Emoji {
             (identical(other.version, version) || other.version == version));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -525,148 +989,314 @@ class _$EmojiImpl implements _Emoji {
       const DeepCollectionEquality().hash(_skins),
       version);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
-      __$$EmojiImplCopyWithImpl<_$EmojiImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EmojiImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Emoji(id: $id, name: $name, keywords: $keywords, skins: $skins, version: $version)';
   }
 }
 
-abstract class _Emoji implements Emoji {
-  const factory _Emoji(
-      {required final String id,
-      required final String name,
-      required final Set<String> keywords,
-      required final List<Skin> skins,
-      required final double version}) = _$EmojiImpl;
-
-  factory _Emoji.fromJson(Map<String, dynamic> json) = _$EmojiImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$EmojiCopyWith<$Res> implements $EmojiCopyWith<$Res> {
+  factory _$EmojiCopyWith(_Emoji value, $Res Function(_Emoji) _then) =
+      __$EmojiCopyWithImpl;
   @override
-  String get id;
-  @override
-  String get name;
-  @override
-  Set<String> get keywords;
-  @override
-  List<Skin> get skins;
-  @override
-  double get version;
-  @override
-  @JsonKey(ignore: true)
-  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      Set<String> keywords,
+      List<Skin> skins,
+      double version});
 }
 
-EmojiData _$EmojiDataFromJson(Map<String, dynamic> json) {
-  return _EmojiData.fromJson(json);
+/// @nodoc
+class __$EmojiCopyWithImpl<$Res> implements _$EmojiCopyWith<$Res> {
+  __$EmojiCopyWithImpl(this._self, this._then);
+
+  final _Emoji _self;
+  final $Res Function(_Emoji) _then;
+
+  /// Create a copy of Emoji
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? keywords = null,
+    Object? skins = null,
+    Object? version = null,
+  }) {
+    return _then(_Emoji(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      keywords: null == keywords
+          ? _self._keywords
+          : keywords // ignore: cast_nullable_to_non_nullable
+              as Set<String>,
+      skins: null == skins
+          ? _self._skins
+          : skins // ignore: cast_nullable_to_non_nullable
+              as List<Skin>,
+      version: null == version
+          ? _self.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$EmojiData {
-  List<Category> get categories => throw _privateConstructorUsedError;
-  Map<String, Emoji> get emojis => throw _privateConstructorUsedError;
+  List<Category> get categories;
+  Map<String, Emoji> get emojis;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EmojiDataCopyWith<EmojiData> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EmojiDataCopyWith<$Res> {
-  factory $EmojiDataCopyWith(EmojiData value, $Res Function(EmojiData) then) =
-      _$EmojiDataCopyWithImpl<$Res, EmojiData>;
-  @useResult
-  $Res call({List<Category> categories, Map<String, Emoji> emojis});
-}
-
-/// @nodoc
-class _$EmojiDataCopyWithImpl<$Res, $Val extends EmojiData>
-    implements $EmojiDataCopyWith<$Res> {
-  _$EmojiDataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of EmojiData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $EmojiDataCopyWith<EmojiData> get copyWith =>
+      _$EmojiDataCopyWithImpl<EmojiData>(this as EmojiData, _$identity);
+
+  /// Serializes this EmojiData to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? categories = null,
-    Object? emojis = null,
-  }) {
-    return _then(_value.copyWith(
-      categories: null == categories
-          ? _value.categories
-          : categories // ignore: cast_nullable_to_non_nullable
-              as List<Category>,
-      emojis: null == emojis
-          ? _value.emojis
-          : emojis // ignore: cast_nullable_to_non_nullable
-              as Map<String, Emoji>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EmojiData &&
+            const DeepCollectionEquality()
+                .equals(other.categories, categories) &&
+            const DeepCollectionEquality().equals(other.emojis, emojis));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(categories),
+      const DeepCollectionEquality().hash(emojis));
+
+  @override
+  String toString() {
+    return 'EmojiData(categories: $categories, emojis: $emojis)';
   }
 }
 
 /// @nodoc
-abstract class _$$EmojiDataImplCopyWith<$Res>
-    implements $EmojiDataCopyWith<$Res> {
-  factory _$$EmojiDataImplCopyWith(
-          _$EmojiDataImpl value, $Res Function(_$EmojiDataImpl) then) =
-      __$$EmojiDataImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $EmojiDataCopyWith<$Res> {
+  factory $EmojiDataCopyWith(EmojiData value, $Res Function(EmojiData) _then) =
+      _$EmojiDataCopyWithImpl;
   @useResult
   $Res call({List<Category> categories, Map<String, Emoji> emojis});
 }
 
 /// @nodoc
-class __$$EmojiDataImplCopyWithImpl<$Res>
-    extends _$EmojiDataCopyWithImpl<$Res, _$EmojiDataImpl>
-    implements _$$EmojiDataImplCopyWith<$Res> {
-  __$$EmojiDataImplCopyWithImpl(
-      _$EmojiDataImpl _value, $Res Function(_$EmojiDataImpl) _then)
-      : super(_value, _then);
+class _$EmojiDataCopyWithImpl<$Res> implements $EmojiDataCopyWith<$Res> {
+  _$EmojiDataCopyWithImpl(this._self, this._then);
 
+  final EmojiData _self;
+  final $Res Function(EmojiData) _then;
+
+  /// Create a copy of EmojiData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? categories = null,
     Object? emojis = null,
   }) {
-    return _then(_$EmojiDataImpl(
+    return _then(_self.copyWith(
       categories: null == categories
-          ? _value._categories
+          ? _self.categories
           : categories // ignore: cast_nullable_to_non_nullable
               as List<Category>,
       emojis: null == emojis
-          ? _value._emojis
+          ? _self.emojis
           : emojis // ignore: cast_nullable_to_non_nullable
               as Map<String, Emoji>,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [EmojiData].
+extension EmojiDataPatterns on EmojiData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_EmojiData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_EmojiData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_EmojiData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(List<Category> categories, Map<String, Emoji> emojis)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData() when $default != null:
+        return $default(_that.categories, _that.emojis);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(List<Category> categories, Map<String, Emoji> emojis)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData():
+        return $default(_that.categories, _that.emojis);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(List<Category> categories, Map<String, Emoji> emojis)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _EmojiData() when $default != null:
+        return $default(_that.categories, _that.emojis);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
-class _$EmojiDataImpl extends _EmojiData {
-  const _$EmojiDataImpl(
+class _EmojiData extends EmojiData {
+  const _EmojiData(
       {required final List<Category> categories,
       required final Map<String, Emoji> emojis})
       : _categories = categories,
         _emojis = emojis,
         super._();
-
-  factory _$EmojiDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmojiDataImplFromJson(json);
+  factory _EmojiData.fromJson(Map<String, dynamic> json) =>
+      _$EmojiDataFromJson(json);
 
   final List<Category> _categories;
   @override
@@ -684,57 +1314,81 @@ class _$EmojiDataImpl extends _EmojiData {
     return EqualUnmodifiableMapView(_emojis);
   }
 
+  /// Create a copy of EmojiData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'EmojiData(categories: $categories, emojis: $emojis)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EmojiDataCopyWith<_EmojiData> get copyWith =>
+      __$EmojiDataCopyWithImpl<_EmojiData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EmojiDataToJson(
+      this,
+    );
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmojiDataImpl &&
+            other is _EmojiData &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._emojis, _emojis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_emojis));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EmojiDataImplCopyWith<_$EmojiDataImpl> get copyWith =>
-      __$$EmojiDataImplCopyWithImpl<_$EmojiDataImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EmojiDataImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EmojiData(categories: $categories, emojis: $emojis)';
   }
 }
 
-abstract class _EmojiData extends EmojiData {
-  const factory _EmojiData(
-      {required final List<Category> categories,
-      required final Map<String, Emoji> emojis}) = _$EmojiDataImpl;
-  const _EmojiData._() : super._();
-
-  factory _EmojiData.fromJson(Map<String, dynamic> json) =
-      _$EmojiDataImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$EmojiDataCopyWith<$Res>
+    implements $EmojiDataCopyWith<$Res> {
+  factory _$EmojiDataCopyWith(
+          _EmojiData value, $Res Function(_EmojiData) _then) =
+      __$EmojiDataCopyWithImpl;
   @override
-  List<Category> get categories;
-  @override
-  Map<String, Emoji> get emojis;
-  @override
-  @JsonKey(ignore: true)
-  _$$EmojiDataImplCopyWith<_$EmojiDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({List<Category> categories, Map<String, Emoji> emojis});
 }
+
+/// @nodoc
+class __$EmojiDataCopyWithImpl<$Res> implements _$EmojiDataCopyWith<$Res> {
+  __$EmojiDataCopyWithImpl(this._self, this._then);
+
+  final _EmojiData _self;
+  final $Res Function(_EmojiData) _then;
+
+  /// Create a copy of EmojiData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? categories = null,
+    Object? emojis = null,
+  }) {
+    return _then(_EmojiData(
+      categories: null == categories
+          ? _self._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      emojis: null == emojis
+          ? _self._emojis
+          : emojis // ignore: cast_nullable_to_non_nullable
+              as Map<String, Emoji>,
+    ));
+  }
+}
+
+// dart format on
